@@ -356,6 +356,9 @@ animation: moveX 1s steps(9) infinite;
 @media (min-width: 5800px) {
 .page-content{width:40%;}
 }
+@media (min-width: 700px) {
+.page-content{ width:100%;}
+}
 
 
 
