@@ -250,8 +250,8 @@ background-image:url("art.jpg");
 background-repeat:no-repeat;
 background-position:center;
 z-index:-1;
-background-size: 100% auto;
-height: calc(50vw - 20vh);
+background-size: cover;
+height: 600px;
 
 }
 .next{
