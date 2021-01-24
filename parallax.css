@@ -245,8 +245,7 @@ justify-content:space-between;
 
 }
 .pic{
-
-background:radial-gradient(circle, rgba(233,199,193,1) 0%, rgba(80,55,72,1) 100%);
+background-image:url("art.jpg");
  background-blend-mode: lighten;
 background-repeat:no-repeat;
 background-size:cover;
