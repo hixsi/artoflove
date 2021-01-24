@@ -5,8 +5,8 @@ html{
 background-image:url("cover1.jpg");
 background-position: center;
 background-size:cover;
-background-repeat:repeat;
-
+background-repeat:no-repeat;
+min-height: 1500px;
 }
 
 
