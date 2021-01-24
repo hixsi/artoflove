@@ -248,10 +248,10 @@ justify-content:space-between;
 background-image:url("art.jpg");
  background-blend-mode: lighten;
 background-repeat:no-repeat;
-background-size:cover;
 background-position:center;
 z-index:-1;
-height:700px;
+background-size: 100% auto;
+height: calc(50vw - 20vh);
 
 }
 .next{
