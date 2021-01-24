@@ -353,11 +353,11 @@ animation: moveX 1s steps(9) infinite;
 .page-content{ width:60%}
 }
 
-@media (min-width: 5800px) {
+@media (min-width: 2800px) {
 .page-content{width:40%;}
 }
-@media (min-width: 700px) {
-.page-content{ width:100%;}
+@media (min-width: 1000px) {
+.page-content{ width:80%;}
 }
 
 
