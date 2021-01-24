@@ -209,3 +209,15 @@ display:block;
   bottom:0;
   margin:auto;
 }
+
+
+@media (min-width: 2000px) {
+.page-content{ width:60%}
+}
+
+@media (min-width: 5800px) {
+.page-content{width:40%;}
+}
+@media (min-width: 700px) {
+.page-content{ width:100%}
+}
