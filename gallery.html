@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Gallery</title>
+<meta charset="utf-8">
+<script>
+function size(id){
+var img1;
+var str;
+var nw,nh;
+var w='',h='';
+var ex=document.getElementById('1');
+var d=0.00000001;
+var i, x;
+
+img1=document.getElementById(id);
+nw=img1.naturalWidth;
+nh=img1.naturalHeight;
+//alert(nw);
+
+ex.style.width= nw.toString() +"px";
+ex.style.height=nh.toString() + "px";
+
+if(nh>=nw){
+
+d=(nh/nw).toPrecision(7);
+
+i=0;
+
+while(nh>600){
+nh=600-i;
+nw=nh/d;
+i=i+1;
+}
+while(nw>800){
+nh=nh-i;
+nw=nh/d;
+i=i+1;
+}
+}
+else{
+
+d=(nw/nh).toPrecision(7);
+i=0;
+//alert(d);
+while(nw>800){
+nw=800-i;
+nh=nw/d;
+i=i+1;
+}
+//alert(nw);
+while(nh>600){
+nw=nw-i;
+nh=nw/d;
+i=i+1;
+}
+//alert(nw);
+
+}
+
+
+ex.style.width= nw.toString() +"px";
+ex.style.height= nh.toString() + "px";
+
+
+}
+
+function showpic(img){
+size(img.id);
+
+var idimg=document.getElementById("1");
+img.alt=(img.id).toString();
+idimg.src=img.src;
+idimg.alt=img.alt;
+idimg.parentElement.style.display = "block";
+
+}
+
+
+
+ function reply_click(clicked_id){
+   
+      return clicked_id;
+  }
+
+  
+  
+  
+ function nextpic(val){ 
+
+ 
+var imgid=parseInt(val);
+var str= imgid+1;
+str=str.toString();
+
+var nextid=document.getElementById(str);
+
+
+var bimageid=document.getElementById("1");
+bimageid.src=document.getElementById(str).src;
+bimageid.alt=str;
+size(str);}
+
+
+
+ function prevpic(val){ 
+ 
+ 
+var imgid=parseInt(val);
+var str= imgid-1;
+str=str.toString();
+
+var nextid=document.getElementById(str);
+
+
+var bimageid=document.getElementById("1");
+bimageid.src=document.getElementById(str).src;
+bimageid.alt=str;
+size(str);}
+
+
+</script>
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="gallery.css">
+
+
+<style>
+
+
+</style>
+</head>
+<body>
+
+
+
+<div id="main-nav">
+<div class="row-container">
+<nav>
+
+
+<form style="display:inline-block;" method="get" action="index.html">
+<button class="btn">Home</button> </form>
+
+
+<div class='dropdown'>
+<button class="btn">Contacts</button>
+
+  <div class="dropdown-content">
+   <a  href="parallax.html"><i class="material-icons">drafts</i>    Love</a>
+  
+  </div></div>
+  
+  
+  
+  <div class='dropdown'>
+ <button class="btn">About</button>
+
+  <div class="dropdown-content">
+ 
+   <a  href="#love">Love</a>
+ 
+  </div></div> 
+  
+    
+ <form method="get" style="display:inline-block" action="parallax.html">
+ <button class="btn">Art info</button> </form>
+
+ 
+
+</nav>
+</div>
+</div>
+<div class="page-content">
+
+<div class="image-row-container" id= "irc">
+
+<script>
+var start = 2;
+var end = 14;
+var image = document.querySelector("#irc");
+var ids = "";
+var el_id="";
+for(var id = start ; id <=end; id++){
+  ids += "<img src='" + id + ".jpg' id='" + id + "' onclick='showpic(this);'  alt='' >";
+   
+}
+document.getElementById("irc").innerHTML = ids;
+
+
+
+
+
+</script>
+
+
+</div>
+<div style="position:absolute">
+<div class="image-show-container" >
+<span onclick="this.parentElement.style.display='none'" class="x">&times;</span>
+<button  class="next" onclick="nextpic(document.getElementById('1').alt)" >&gt;</button>
+<button  class="prev" onclick="prevpic(document.getElementById('1').alt)" >&lt;</button>
+<img class="expandedimg" id="1" src="2.jpg" alt="" >
+
+ 
+
+</div>
+</div>
+</div>
+
+</body>
+
+
+</html>
