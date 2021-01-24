@@ -289,3 +289,22 @@ input#content{
 	color:black;
 	font-size:20px;
 }
+
+@media (min-width: 2000px) {
+.page-content{ width:60%}
+}
+
+@media (min-width: 2800px) {
+.page-content{width:40%;}
+}
+@media (min-width: 1000px;) {
+	
+.page-content{ width:80%;}
+
+}
+@media (min-width: 700px;) {
+
+.page-content{ width:100%;}
+
+}
+
