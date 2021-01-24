@@ -204,7 +204,7 @@ transform: scale(1.03) perspective(1px);}
 
 
 
-.right-t-d{background-image:url(sky_rd.jpg); float:left; left: 60%;}
+.right-t-d{background-image:url(background.jpg); float:left; left: 60%;}
 .left-t-d{background-image:url(sky_ld.jpg); clear:both; }
 
 
