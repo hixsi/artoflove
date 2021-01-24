@@ -293,3 +293,16 @@ input#content{
 	color:black;
 	font-size:20px;
 }
+
+
+
+@media (min-width: 2000px) {
+.page-content{ width:60%}
+}
+
+@media (min-width: 5800px) {
+.page-content{width:40%;}
+}
+@media (min-width: 700px) {
+.page-content{ width:100%}
+}
