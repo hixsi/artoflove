@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Art Articles</title>
+<meta charset="utf-8">
+
+
+<script>
+
+var titles=["Modern Art","Renaissanse Art"];
+function setFirstTitle(){
+document.getElementById('title').innerText="Modern Art";}
+
+
+function nextpic(id){ 
+document.getElementById('p').style.visibility="visible";
+var name=id.style.backgroundImage;
+var num_pic=name.replace(/\D/g,"");
+var current=parseInt(num_pic);
+
+if(current<2){
+	
+var sum=current+1;
+var str=sum.toString();
+var next='a'+ str;
+if (sum==2) { document.getElementById('n').style.visibility="hidden";}
+var str="url('"+ next + ".jpg')";
+
+id.style.backgroundImage="url('" + next + ".jpg')";
+
+//document.getElementById('text').src= next + '.txt';
+document.getElementById("a"+current).style.display="none";
+document.getElementById(next).style.display="block";
+document.getElementById('title').innerHTML=titles[sum-1];
+}
+
+return;
+}
+
+
+
+
+function prevpic(id){ 
+document.getElementById('n').style.visibility="visible";
+var name=id.style.backgroundImage;
+
+var num_pic=name.replace(/\D/g,"");
+var current=parseInt(num_pic);
+
+if(current>1){
+	
+var sum=parseInt(num_pic)-1;
+var str=sum.toString();
+var prev='a'+ str;
+var str="url('"+ prev + ".jpg')";
+if (sum==1) { document.getElementById('p').style.visibility="hidden";}
+
+id.style.backgroundImage="url('" + prev + ".jpg')";
+//document.getElementById('text').src= prev + '.txt';
+document.getElementById("a"+current).style.display="none";
+document.getElementById(prev).style.display="block";
+document.getElementById('title').innerHTML=titles[sum-1];}
+return;
+}
+
+
+
+
+
+
+</script>
+
+<style>
+
+</style>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="parallax.css">
+
+</head>
+<body>
+
+<div id="main-nav">
+<div class="row-container">
+<nav>
+
+<div  class="triangle-up-20"></div>
+
+
+<div  class="triangle-up"></div>
+
+
+
+ <form method="get" style="display:inline-block" action="index.html">
+ <button class="btn">Home</button> </form>
+
+
+
+
+<div class='dropdown'>
+<button class="btn">Contacts</button>
+
+  <div class="dropdown-content">
+   <a  href="parallax.html"><i class="material-icons" style="font-size:14px">drafts</i>    Love</a>
+  
+  </div></div>
+  
+  
+  
+  <div class='dropdown'>
+ <button class="btn">About</button>
+
+  <div class="dropdown-content">
+ 
+   <a  href="#love">Love</a>
+ 
+  </div></div> 
+
+   
+ <form method="get" style="display:inline-block" action="parallax.html">
+ <button class="btn">Art info</button> </form>
+
+ 
+ <form method="get" style="display:inline-block" action="gallery.html">
+ <button class="btn">Gallery</button> </form>
+
+</nav>
+</div> 
+<div  class="triangle-up-20"></div>
+<div class="row-container">
+<div  class="triangle-up"></div>
+<div  class="triangle-up-100"></div>
+</div>
+</div>
+
+
+<div  class="triangle-up-40"></div>
+<div  class="triangle-up-20"></div>
+
+<div  class="triangle-up"></div>
+
+
+
+<div id="p-img" class="parallax" style="background-image:url('a1.jpg');"></div>
+
+<div class="pic">
+<div id = "box" class="txtbox" ">
+
+<button id="p" class="prev"  onclick="prevpic(document.getElementById('p-img'))" >&lt;</button>
+
+
+<div style=" display:flex; justify-content:space-evenly; width:85%; flex-direction: column;">
+<p id="title"  style="font-size:40px; color:black; text-align:center;  " > Modern Art</p>
+
+<p id='a1' style="font-size:25px; color:black; display:block; text-align:center;" >
+
+Modern art includes artistic work produced during the period extending 
+roughly from the 1860s to the 1970s, and denotes the styles and philosophies 
+of the art produced during that era.[1] The term is usually associated with 
+art in which the traditions of the past have been thrown aside in a spirit of 
+experimentation.[2] Modern artists experimented with new ways of seeing and 
+with fresh ideas about the nature of materials and functions of art. 
+A tendency away from the narrative, which was characteristic for the traditional arts,
+ toward abstraction is characteristic of much modern art. More recent artistic production 
+ is often called contemporary art or postmodern art.
+
+Modern art begins with the heritage of painters like Vincent van Gogh,
+ Paul Cézanne, Paul Gauguin, Georges Seurat and Henri de Toulouse-Lautrec
+ all of whom were essential for the development of modern art. 
+ At the beginning of the 20th century Henri Matisse and several other young artists 
+ including the pre-cubists Georges Braque, André Derain, Raoul Dufy, Jean Metzinger 
+ and Maurice de Vlaminck revolutionized the Paris art world with "wild", multi-colored,
+ expressive landscapes and figure paintings that the critics called Fauvism. Matisse's 
+ two versions of The Dance signified a key point in his career and in the development of 
+ modern painting.[3] It reflected Matisse's incipient fascination with primitive art: 
+ the intense warm color of the figures against the cool blue-green 
+background and the rhythmical succession of the dancing nudes convey the feelings of
+ emotional liberation and hedonism. 
+</p>
+
+<p id='a2' style="font-size:25px; color:black; display:none; text-align:center;" >
+Renaissance art is the painting, sculpture and decorative arts of the period of European history 
+known as the Renaissance, which emerged as a distinct style in Italy in about AD 1400, in parallel with
+ developments which occurred in philosophy, literature, music, science and technology. Renaissance art, 
+perceived as the noblest of ancient traditions, took as its foundation the art of Classical antiquity, 
+but transformed that tradition by absorbing recent developments in the art of Northern Europe and 
+by applying contemporary scientific knowledge. Along with Renaissance humanist philosophy, 
+it spread throughout Europe,
+ affecting both artists and their patrons with the development of new techniques and new artistic sensibilities. 
+For art historians, Renaissance art marks the transition of Europe from the medieval period 
+to the Early Modern age. 
+</p>
+</div>
+ 
+ <button id="n" class="next"  onclick="nextpic(document.getElementById('p-img'))" >&gt;</button>
+ 
+
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
